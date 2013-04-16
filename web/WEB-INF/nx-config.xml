@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <configurations>
+   <configuration serviceName="entertainment" groupName="local-test" commonGroupName="local-test" localOnly="true" dispatcherUrl=""/>
+ </configurations>

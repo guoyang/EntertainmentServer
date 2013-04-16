@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<project name="nx-config-SeaTycoon-win-deploy" basedir="." default="dist">
+	
+	<description>Dreamingame build script</description>
+
+	<property name="app.name" value="entertainment"/>
+	<property name="environment" value="local-test"/>
+	<property name="config.root.path" value="C:/nx_config/client"/>
+
+	<property name="config.home" value="${basedir}/${app.name}"/>
+	<property name="dist.home" value="${config.root.path}/${app.name}/${environment}" />
+
+	<target name="init" description="init configuration folder">
+		<delete dir="${dist.home}"/>
+		<mkdir dir="${dist.home}"/>
+	</target>
+
+	<target name="dist" depends="init" description="dist configuration files">
+		<copy todir="${dist.home}" overwrite="true">
+			<fileset dir="${config.home}/default" />
+		</copy>
+		<copy todir="${dist.home}" overwrite="true">
+			<fileset dir="${config.home}/${environment}"/>
+		</copy>
+	</target>
+</project>
