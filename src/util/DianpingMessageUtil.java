@@ -45,7 +45,7 @@ public class DianpingMessageUtil {
 //		paramMap.put("has_deal", "1");
 //		paramMap.put("keyword", "泰国菜");
 //		paramMap.put("sort", "7");
-		apiUrl += protocolName;
+		String apiUrlTmp = apiUrl + protocolName;
 		// 拼接有序的参数名-值串
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append(appkey);
@@ -87,7 +87,7 @@ public class DianpingMessageUtil {
 					.append(entry.getValue());
 		}
 
-		String requestUrl = apiUrl + "?" + stringBuilder.toString();
+		String requestUrl = apiUrlTmp + "?" + stringBuilder.toString();
 
 		System.out.println(requestUrl);
 
